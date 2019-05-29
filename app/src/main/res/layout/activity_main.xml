@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/samsung_s7"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <RelativeLayout
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/txtdashboard"
+                android:text="Dashboard"
+                android:textSize="35sp"
+                android:textColor="#FFFFFF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+
+        <GridLayout
+            android:columnCount="2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginRight="25dp">
+            <LinearLayout
+                android:id="@+id/my_profile"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:src="@drawable/contact"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="My Profile"
+                    android:textSize="17dp"
+                    android:textColor="#39FF14"
+                    android:layout_marginTop="12dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/kcal_button"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/bookmark" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="0dp"
+                    android:text="Kcal"
+                    android:textSize="17dp"
+                    android:textColor="#39FF14" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/meals"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:orientation="vertical"
+                android:padding="0dp"
+                android:gravity="center">
+                <ImageView
+                    android:src="@drawable/date"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Meals Generator"
+                    android:textSize="17dp"
+                    android:textColor="#39FF14"
+                    android:layout_marginTop="12dp"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/goals_button"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:orientation="vertical"
+                android:padding="0dp"
+                android:gravity="center">
+                <ImageView
+                    android:src="@drawable/bitcoin"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Goals"
+                    android:textSize="17dp"
+                    android:textColor="#39FF14"
+                    android:layout_marginTop="12dp"/>
+            </LinearLayout>
+        </GridLayout>
+    </LinearLayout>
+</LinearLayout>
