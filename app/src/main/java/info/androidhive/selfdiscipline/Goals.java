@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -28,7 +29,7 @@ public class Goals extends AppCompatActivity {
 
         // Take the value from spinner when you choose the goal
         Spinner spinner = (Spinner) findViewById(R.id.goal_spinner);
-       /* String goal_spinner = spinner.getSelectedItem().toString();*/
+
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.establish_goal, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
@@ -41,14 +42,31 @@ public class Goals extends AppCompatActivity {
         spinner2.setAdapter(adapter2);
 
 
-       /* if (goal_spinner.equals("Maintain weight")){
-            spinner2.setVisibility(View.GONE);
-        }
-        else{
-            spinner.setVisibility(View.VISIBLE);
-            spinner2.setVisibility(View.VISIBLE);
-        }
-*/
+
+        Spinner spinner3 = (Spinner) findViewById(R.id.goal_spinner);
+        spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+
+                                        @Override
+                                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                                            String goal_spinner2 = spinner3.getSelectedItem().toString();
+                                            if (goal_spinner2.equals("Losing weight") || goal_spinner2.equals("Gaining some muscle")) {
+                                                spinner2.setVisibility(View.VISIBLE);
+                                            }
+                                            if (goal_spinner2.equals("Maintain weight")) {
+                                                spinner2.setVisibility(View.GONE);
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onNothingSelected(AdapterView<?> parent) {
+
+                                        }
+                                    });
+
+
+
         //Calling the method
         Button buton_calc = (Button) findViewById(R.id.button_recalculate);
         buton_calc.setOnClickListener(new View.OnClickListener() {
@@ -103,6 +121,8 @@ public class Goals extends AppCompatActivity {
         if (goal_spinner.equals("Maintain weight")) {
             recalculation = finalcaloriesint;
         }
+
+
 
         System.out.println(recalculation);
         TextView textView =(TextView) findViewById(R.id.text_recalculate);

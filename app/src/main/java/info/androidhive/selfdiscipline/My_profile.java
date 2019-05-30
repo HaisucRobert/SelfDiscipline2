@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 public class My_profile extends AppCompatActivity {
@@ -41,6 +43,7 @@ public class My_profile extends AppCompatActivity {
             TextView weight =(TextView) findViewById(R.id.weight);
             TextView lifestyle =(TextView) findViewById(R.id.lifestyle);
             TextView calories =(TextView) findViewById(R.id.calories);
+            TextView day = (TextView) findViewById(R.id.txt_day);
 
 
             if (resultdata.moveToNext()){
@@ -48,7 +51,7 @@ public class My_profile extends AppCompatActivity {
                 weight.setText(resultdata.getString(3));
                 lifestyle.setText(resultdata.getString(5));
                 calories.setText(resultdata.getString(6));
-
+                day.setText("Day: "+resultdata.getString(0));
             }
         }
 

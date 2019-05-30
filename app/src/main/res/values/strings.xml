@@ -26,8 +26,8 @@
 
 
     <string-array name="establish_goal">
-        <item>Maintain weight</item>
         <item>Losing weight</item>
+        <item>Maintain weight</item>
         <item>Gaining some muscle</item>
     </string-array>
 

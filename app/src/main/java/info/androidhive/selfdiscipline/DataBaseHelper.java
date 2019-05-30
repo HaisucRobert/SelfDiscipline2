@@ -290,6 +290,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return 0 == size;
     }
 
+
     public List<Food> calculateMeal2(int finalcalories) {
         List<Food> allFoods = this.getAllData();
         List<Food> uniqueValues = new ArrayList<>();
